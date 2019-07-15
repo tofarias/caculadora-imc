@@ -26,18 +26,21 @@ class _HomeState extends State<Home> {
       double imc = weight / (height * height);
 
       if( imc < 17.0 ){
-        _infoText = "Muito Abaixo do peso (${imc.toStringAsPrecision(4)})";
-      }else if( imc >= 17.0 && imc <= 48.49  ){
-        _infoText = "Abaixo do peso (${imc.toStringAsPrecision(4)})";
+        _infoText = "Muito Abaixo do peso ";
+      }else if( imc >= 17.0 && imc <= 18.49  ){
+        _infoText = "Abaixo do peso ";
       }else if( imc >= 18.5 && imc <= 24.99  ){
-        _infoText = "Acima do peso (${imc.toStringAsPrecision(4)})";
+        _infoText = "Acima do peso ";
       }else if( imc >= 30.0 && imc <= 34.99  ){
-        _infoText = "Obesidade I (${imc.toStringAsPrecision(4)})";
+        _infoText = "Obesidade I ";
       }else if( imc >= 35.0 && imc <= 39.99  ){
-        _infoText = "Obesidade II (${imc.toStringAsPrecision(4)})";
+        _infoText = "Obesidade II (severa)";
       }else{
-        _infoText = "Obesidade III (${imc.toStringAsPrecision(4)})";
+        _infoText = "Obesidade III (mórbida) ";
       }
+
+      _infoText = _infoText + "${imc.toStringAsPrecision(4)}";
+
     });
   }
 
